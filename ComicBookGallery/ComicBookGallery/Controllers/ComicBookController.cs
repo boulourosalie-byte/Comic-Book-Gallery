@@ -10,13 +10,19 @@ namespace ComicBookGallery.Controllers
     {
         public ActionResult Detail()
         {
-            if (DateTime.Today.DayOfWeek == DayOfWeek.Thursday)
+            ViewBag.SeriesTitle = "The amazing spider man";
+            ViewBag.IssueNumber = 700;
+            ViewBag.Description =  "<P> Final issues </p>";
+            ViewBag.Artists = new string[]
             {
-                return  Redirect("/");
+                "Script: OBioyo rosalie ", 
+                 "Pencils : grande fille",
+                  "Inks : miss Berthe",
+                  "Color:  Ambala Yann",
+                   "Letters : Chris Eliopoulus"
             }
-            return Content("Hello from the comic Book Controller");
-
-            
+            ;
+            return View();
         } 
     }
 }
